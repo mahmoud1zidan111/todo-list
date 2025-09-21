@@ -74,11 +74,6 @@ export default function TodoList() {
   }
 
   useEffect(() => {
-    const storageTodos = JSON.parse(localStorage.getItem("todos")) ?? [];
-    setTodos(storageTodos);
-  });
-
-  useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos]);
   // خزّن أي تحديثات

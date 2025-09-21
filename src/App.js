@@ -4,7 +4,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { TodosContext } from "./contexts/todosContext";
 import { useState } from "react";
 
-import { v4 as uuidv4 } from "uuid";
+// import { v4 as uuidv4 } from "uuid";
 // import MySnackBar from "./components/MySnackBar";
 
 import { ToastProvider } from "./contexts/ToastContext";
@@ -20,17 +20,11 @@ const theme = createTheme({
   },
 });
 
-const initialTodos = [
-  {
-    id: uuidv4(),
-    title: "",
-    details: "",
-    isCompleted: false,
-  },
-];
-
 function App() {
-  const [todos, setTodos] = useState(initialTodos);
+  const [todos, setTodos] = useState(() => {
+    const storageTodos = JSON.parse(localStorage.getItem("todos"));
+    return storageTodos ?? [];
+  });
   return (
     <ThemeProvider theme={theme}>
       <ToastProvider>
