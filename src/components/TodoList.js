@@ -65,9 +65,9 @@ export default function TodoList() {
 
   let todosToBeRendered = todos;
 
-  if (displayedTodosType == "completed") {
+  if (displayedTodosType === "completed") {
     todosToBeRendered = completedTodos;
-  } else if (displayedTodosType == "non-completed") {
+  } else if (displayedTodosType === "non-completed") {
     todosToBeRendered = notCompletedTodos;
   } else {
     todosToBeRendered = todos;
@@ -76,7 +76,7 @@ export default function TodoList() {
   useEffect(() => {
     const storageTodos = JSON.parse(localStorage.getItem("todos")) ?? [];
     setTodos(storageTodos);
-  }, []);
+  });
 
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos));
@@ -116,7 +116,7 @@ export default function TodoList() {
 
   function handleDeleteConfirm() {
     const updatedTodos = todos.filter((t) => {
-      return t.id != dialogTodo.id;
+      return t.id !== dialogTodo.id;
     });
     setTodos(updatedTodos);
     localStorage.setItem("todos", JSON.stringify(updatedTodos));
@@ -130,7 +130,7 @@ export default function TodoList() {
 
   function handleUpdateConfirm() {
     const updatedTodos = todos.map((t) => {
-      if (t.id == dialogTodo.id) {
+      if (t.id === dialogTodo.id) {
         return {
           ...t,
           title: dialogTodo.title,
@@ -301,7 +301,7 @@ export default function TodoList() {
                   onClick={() => {
                     handleAddClick();
                   }}
-                  disabled={titleInput.length == 0}
+                  disabled={titleInput.length === 0}
                 >
                   إضافة
                 </Button>

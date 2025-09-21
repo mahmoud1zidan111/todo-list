@@ -12,7 +12,8 @@ import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined
 import IconButton from "@mui/material/IconButton";
 import ModeEditOutlineOutlinedIcon from "@mui/icons-material/ModeEditOutlineOutlined";
 
-import { useContext, useState } from "react";
+import { useContext } from "react";
+// import { useState } from "react";
 import { TodosContext } from "../contexts/todosContext";
 import { useToast } from "../contexts/ToastContext";
 
@@ -24,10 +25,10 @@ import { useToast } from "../contexts/ToastContext";
 // import DialogTitle from "@mui/material/DialogTitle";
 
 export default function Todo({ todo, showDelete, showUpdate }) {
-  const [updatedTodo, setUpdatedTodo] = useState({
-    title: todo.title,
-    details: todo.details,
-  });
+  // const [updatedTodo, setUpdatedTodo] = useState({
+  //   title: todo.title,
+  //   details: todo.details,
+  // });
   const { todos, setTodos } = useContext(TodosContext);
   const { showHideToast } = useToast();
   // const { showHideToast } = useContext(ToastContext);
@@ -35,7 +36,7 @@ export default function Todo({ todo, showDelete, showUpdate }) {
   // EVENT HANDLERS
   function handleCheckClick() {
     const updatedTodos = todos.map((t) => {
-      if (t.id == todo.id) {
+      if (t.id === todo.id) {
         t.isCompleted = !t.isCompleted;
       }
       return t;
