@@ -20,7 +20,14 @@ const theme = createTheme({
   },
 });
 
-const initialTodos = [];
+const initialTodos = [
+  {
+    id: uuidv4(),
+    title: "",
+    details: "",
+    isCompleted: false,
+  },
+];
 
 function App() {
   const [todos, setTodos] = useState(initialTodos);
