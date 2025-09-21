@@ -5,7 +5,7 @@ import { TodosContext } from "./contexts/todosContext";
 import { useState } from "react";
 
 import { v4 as uuidv4 } from "uuid";
-import MySnackBar from "./components/MySnackBar";
+// import MySnackBar from "./components/MySnackBar";
 
 import { ToastProvider } from "./contexts/ToastContext";
 const theme = createTheme({
