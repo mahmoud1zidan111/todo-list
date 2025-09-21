@@ -20,26 +20,7 @@ const theme = createTheme({
   },
 });
 
-const initialTodos = [
-  {
-    id: uuidv4(),
-    title: "قراءة كتاب",
-    details: "تيسمبتيس يتسبميتس بيمستب",
-    isCompleted: false,
-  },
-  {
-    id: uuidv4(),
-    title: "قراءة كتاب",
-    details: "تيسمبتيس يتسبميتس بيمستب",
-    isCompleted: false,
-  },
-  {
-    id: uuidv4(),
-    title: "قراءة كتاب",
-    details: "تيسمبتيس يتسبميتس بيمستب",
-    isCompleted: false,
-  },
-];
+const initialTodos = [];
 
 function App() {
   const [todos, setTodos] = useState(initialTodos);
