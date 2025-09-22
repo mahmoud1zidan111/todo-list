@@ -51,14 +51,12 @@ export default function TodoList() {
 
   const completedTodos = useMemo(() => {
     return todos.filter((t) => {
-      console.log("calling completed todos");
       return t.isCompleted;
     });
   }, [todos]);
 
   const notCompletedTodos = useMemo(() => {
     return todos.filter((t) => {
-      console.log("calling not completed todos");
       return !t.isCompleted;
     });
   }, [todos]);
